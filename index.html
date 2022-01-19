@@ -13,13 +13,25 @@
         const winningComb = ['Paper', 'Scissor', 'Rock']
         const loosingComb = ['Scissor', 'Rock', 'Paper']
         function computerPlay(){
-            return allPossibilities[Math.round((Math.random() * 2))];
+            return Math.round((Math.random() * 2));
         }
 
         function determineWinner(playerSelection, computerPlay){
-            
+            const casedPlayerSelection = `${playerSelection.charAt(0).toUpperCase()}${playerSelection.slice(1).toLowerCase()}`
+            if(winningComb.indexOf(casedPlayerSelection) === computerPlay){
+                return true;
+            } else if(loosingComb.indexOf(casedPlayerSelection) === computerPlay){
+                return false;
+            }
+            return 'tie';               
+        }   
 
-        }
-    </script>
+        console.log(determineWinner('rock', computerPlay()))
+
+</script>
+</body>
+</html>
+
+</script>
 </body>
 </html>
