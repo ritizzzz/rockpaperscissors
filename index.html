@@ -32,7 +32,9 @@
         function game(){
             const playerSelection = prompt('Select rock paper or scissors', 'Rock');
             const computerplay = computerPlay();
-            if(determineWinner(playerSelection, computerplay)){
+            if(determineWinner(playerSelection, computerplay) === 'tie'){
+                return 'It is a tie';
+            }else if(determineWinner(playerSelection, computerplay)){
                 playerScore += 1;
                 return  `You Win! ${playerSelection} beats ${allPossibilities[computerplay]}`
             }else if (!determineWinner(playerSelection, computerplay)){
@@ -41,7 +43,20 @@
             }
         }
 
-        
+        function announceWinner(){
+            for(let i = 0; i< 5; i++){
+                console.log(game())
+            }
+            if(playerScore > computerScore){
+                console.log(`You win with a score of ${playerScore}`)
+            }else if(playerScore === computerScore){
+                console.log('It is a tie');
+            }else{
+                console.log(`You lose! Computers score was ${computerScore}`);
+            }
+        }
+
+    announceWinner()
 </script>
 </body>
 </html>
