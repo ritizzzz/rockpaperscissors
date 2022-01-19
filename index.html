@@ -12,6 +12,8 @@
         const allPossibilities = ['Rock', 'Paper', 'Scissor'];
         const winningComb = ['Paper', 'Scissor', 'Rock']
         const loosingComb = ['Scissor', 'Rock', 'Paper']
+        let playerScore = 0;
+        let computerScore = 0;
         function computerPlay(){
             return Math.round((Math.random() * 2));
         }
@@ -26,8 +28,20 @@
             return 'tie';               
         }   
 
-        console.log(determineWinner('rock', computerPlay()))
 
+        function game(){
+            const playerSelection = prompt('Select rock paper or scissors', 'Rock');
+            const computerplay = computerPlay();
+            if(determineWinner(playerSelection, computerplay)){
+                playerScore += 1;
+                return  `You Win! ${playerSelection} beats ${allPossibilities[computerplay]}`
+            }else if (!determineWinner(playerSelection, computerplay)){
+                computerScore += 1;
+                return  `You Lose! ${allPossibilities[computerplay]} beats ${playerSelection}`
+            }
+        }
+
+        
 </script>
 </body>
 </html>
