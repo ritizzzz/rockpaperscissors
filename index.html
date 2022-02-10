@@ -7,69 +7,23 @@
     <title>Rock Paper scissors</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="index.js" defer></script>
+    <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Gloria+Hallelujah">
 </head>
 <body>
     <div class="container">
+        <span>Rock paper Scissors</span>
         <div class="userSelection">
-            <div id="rock"></div>
-            <div id="paper"></div>
-            <div id="scissors"></div>
+            <div id="rock">Rock</div>
+            <div id="paper">Paper</div>
+            <div id="scissors">Scissor</div>
         </div>
-        <div class="score"></div>
+        <div class="resultDisplay"></div>
+        <div class="score">
+            <div class="userScore">Your score is: 0</div>
+            <div class="computerScore"> Computers score is: 0</div>
+        </div>
         <div class="announceWinner"></div>
-    </div>>
-
-    <script>
-
-        const allPossibilities = ['Rock', 'Paper', 'Scissor'];
-        const winningComb = ['Paper', 'Scissor', 'Rock']
-        const loosingComb = ['Scissor', 'Rock', 'Paper']
-        let playerScore = 0;
-        let computerScore = 0;
-        function computerPlay(){
-            return Math.round((Math.random() * 2));
-        }
-
-        function determineWinner(playerSelection, computerPlay){
-            const casedPlayerSelection = `${playerSelection.charAt(0).toUpperCase()}${playerSelection.slice(1).toLowerCase()}`
-            if(winningComb.indexOf(casedPlayerSelection) === computerPlay){
-                return true;
-            } else if(loosingComb.indexOf(casedPlayerSelection) === computerPlay){
-                return false;
-            }
-            return 'tie';               
-        }   
-
-
-        function game(){
-            const playerSelection = prompt('Select rock paper or scissors', 'Rock');
-            const computerplay = computerPlay();
-            if(determineWinner(playerSelection, computerplay) === 'tie'){
-                return 'It is a tie';
-            }else if(determineWinner(playerSelection, computerplay)){
-                playerScore += 1;
-                return  `You Win! ${playerSelection} beats ${allPossibilities[computerplay]}`
-            }else if (!determineWinner(playerSelection, computerplay)){
-                computerScore += 1;
-                return  `You Lose! ${allPossibilities[computerplay]} beats ${playerSelection}`
-            }
-        }
-
-        function announceWinner(){
-            for(let i = 0; i< 5; i++){
-                console.log(game())
-            }
-            if(playerScore > computerScore){
-                console.log(`You win with a score of ${playerScore}`)
-            }else if(playerScore === computerScore){
-                console.log('It is a tie');
-            }else{
-                console.log(`You lose! Computers score was ${computerScore}`);
-            }
-        }
-
-    announceWinner()
-</script>
+    </div>
 </body>
 </html>
 

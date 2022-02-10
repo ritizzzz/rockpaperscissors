@@ -1,0 +1,52 @@
+html{
+    background: url(background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: center;
+    font-size: 35px;    
+    font-family: 'Gloria Hallelujah', sans-serif;
+    
+}
+
+span{
+    font-size: 45px;
+}
+
+.userSelection{
+    display: flex;
+    border: 4px solid black;
+    width: 300px;
+    height: 60px;
+    
+  
+}
+.userSelection > div{
+    height: 60px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.userSelection > div:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+#rock, #paper{
+    border-right: 4px solid black;
+}
+
+.score{
+    display: flex;
+    gap: 50px;
+}
