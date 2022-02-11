@@ -4,16 +4,15 @@ html{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  
 }
+
 .container{
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 6px;
     align-items: center;
     font-size: 35px;    
-    font-family: 'Gloria Hallelujah', sans-serif;
-    
+    font-family: 'Gloria Hallelujah', sans-serif;    
 }
 
 span{
@@ -36,13 +35,15 @@ span{
     align-items: center;
 
 }
-
+.options{
+    background: gray
+}
 .userSelection > div:hover{
     background-color: gray;
     cursor: pointer;
 }
 
-#rock, #paper{
+.toSelect:nth-child(-n+2){
     border-right: 4px solid black;
 }
 
