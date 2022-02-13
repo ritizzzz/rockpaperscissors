@@ -30,7 +30,6 @@ function computerPlay(){
 }
 
 function determineWinner(playerSelection, computerPlay){
-    const casedPlayerSelection = `${playerSelection.charAt(0).toUpperCase()}${playerSelection.slice(1).toLowerCase()}`
     if(winningComb.indexOf(casedPlayerSelection) === computerPlay){
         return true;
     } else if(loosingComb.indexOf(casedPlayerSelection) === computerPlay){
