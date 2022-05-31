@@ -30,9 +30,10 @@ function computerPlay(){
 }
 
 function determineWinner(playerSelection, computerPlay){
-    if(winningComb.indexOf(casedPlayerSelection) === computerPlay){
+    
+    if(winningComb.indexOf(playerSelection) === computerPlay){
         return true;
-    } else if(loosingComb.indexOf(casedPlayerSelection) === computerPlay){
+    } else if(loosingComb.indexOf(playerSelection) === computerPlay){
         return false;
     }
     return 'tie';               
